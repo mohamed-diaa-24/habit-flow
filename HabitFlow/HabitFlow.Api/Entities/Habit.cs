@@ -1,4 +1,6 @@
-﻿namespace HabitFlow.Api.Entities;
+﻿using HabitFlow.Api.Enums;
+
+namespace HabitFlow.Api.Entities;
 
 public sealed class Habit
 {
@@ -17,44 +19,3 @@ public sealed class Habit
     public DateTime LastCompletedAtUtc { get; set; }
 }
 
-public enum HapitType
-{
-    None = 0,
-    Binary = 1,
-    Measurable = 2
-}
-
-public sealed class Frequency
-{
-    public FrequencyType Type { get; set; }
-
-    public int TimePerPeriod { get; set; }
-}
-
-public enum FrequencyType
-{
-    None = 0,
-    Daily = 1,
-    Weekly = 2,
-    Monthly = 3
-}
-
-public sealed class Target
-{
-    public int Value { get; set; }
-    public int Unit { get; set; }
-
-}
-public enum HabitStatus
-{
-    None = 0,
-    Ongoing = 1,
-    Completed = 2
-}
-
-public sealed class Milestone
-{
-    public int Target { get; set; }
-
-    public int Current { get; set; }
-}
