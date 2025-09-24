@@ -1,6 +1,6 @@
 ﻿namespace HabitFlow.Api.Enums;
 
-public enum HapitType
+public enum HabitType
 {
     None = 0,
     Binary = 1,

@@ -7,7 +7,7 @@ public sealed class Habit
     public string Id { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
-    public HapitType Type { get; set; }
+    public HabitType Type { get; set; }
     public Frequency Frequency { get; set; }
     public Target Target { get; set; }
     public HabitStatus Status { get; set; }
