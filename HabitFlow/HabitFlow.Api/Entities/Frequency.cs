@@ -1,0 +1,10 @@
+﻿using HabitFlow.Api.Enums;
+
+namespace HabitFlow.Api.Entities;
+
+public sealed class Frequency
+{
+    public FrequencyType Type { get; set; }
+
+    public int TimePerPeriod { get; set; }
+}
