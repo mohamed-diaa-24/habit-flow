@@ -3,6 +3,7 @@ using System;
 using HabitFlow.Api.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HabitFlow.Api.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250924081328_UpdateHabitModel")]
+    partial class UpdateHabitModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,10 +132,9 @@ namespace HabitFlow.Api.Migrations.Application
                                 .HasColumnType("character varying(500)")
                                 .HasColumnName("id");
 
-                            b1.Property<string>("Unit")
-                                .IsRequired()
+                            b1.Property<int>("Unit")
                                 .HasMaxLength(100)
-                                .HasColumnType("character varying(100)")
+                                .HasColumnType("integer")
                                 .HasColumnName("target_unit");
 
                             b1.Property<int>("Value")
